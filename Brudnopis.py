@@ -81,3 +81,22 @@ class PowerIterator:
 
 for i in PowerIterator(10):
     print(i)
+
+# Tu masz to co próbuuje wypocić
+
+class Iterator:
+    def __init__(self, n, m):
+        self.n = n
+        self.m = m
+        self.list = []
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.n == len(self.list):
+            raise StopIteration
+        
+
+for i in Iterator(10):
+    print(i)
