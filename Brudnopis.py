@@ -122,3 +122,24 @@ class Iterator:
                 
 for i in Iterator(10, 3):
     print(i)
+
+    class Iterator:
+    def __init__(self, n, m):
+        self.n = n
+        self.m = m
+        self.list = []
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.n == len(self.list):
+            raise StopIteration
+        for i in range(self.n * self.m):
+            if i % self.m != 0:
+                self.list.append(i)
+        return self.list
+
+
+for i in Iterator(10, 3).__next__():
+    print(i)
