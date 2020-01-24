@@ -1,5 +1,5 @@
-from datetime import datetime
 from math import sqrt
+from datetime import datetime
 
 def is_prime(n):
     for i in range(2, int(sqrt(n))+1):
@@ -7,20 +7,17 @@ def is_prime(n):
             return False
     return True
 
+def prime_generator(n):
+    number = 2
+    generated_numbers = 0
+    while generated_numbers != n:
+        if is_prime(number):
+            yield number
+            generated_numbers += 1
+        number += 1
 
-def get_n_primes(n):
-    primes = []
-    i = 2
-    while len(primes) != n:
-        if is_prime(i):
-            primes.append(i)
-        i += 1
-    return primes
 
-lst = get_n_primes(5000)
+lst = prime_generator(5000)
 for i in lst:
     print(i)
-    print(lst)  # sprawdż czym jest lst
-
-
-
+    print(lst)
