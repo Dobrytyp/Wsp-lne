@@ -234,3 +234,17 @@ class Iterator:
 test = Iterator(10, 3)
 for i in test:
     print(i)
+
+    
+def fibonacci_generator(n):
+    i = 0
+    first, second = 1, 1
+    while i != n:
+        yield first
+        first, second = second, first + second
+        i += 1
+
+
+
+for i in fibonacci_generator(10):
+    print(i)
