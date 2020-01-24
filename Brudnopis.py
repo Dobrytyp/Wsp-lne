@@ -103,3 +103,32 @@ class Iterator:
 
 for i in Iterator(10, 3):
     print(i)
+
+class Iterator:
+    def __init__(self, n, m):
+        self.n = n
+        self.m = m
+        self.list = []
+
+    def __iter__(self):
+        return self
+
+    # def __next__(self):
+    #     return self.n
+
+    def test(self):
+        # if self.n == len(self.list):
+        #     raise StopIteration
+        for i in range(1, 30):
+            if i % self.m != 0:
+                self.list.append(i)
+
+    def test2(self):
+        return self.list
+
+
+test = Iterator(10,3)
+test.test()
+print(test.test2())
+# for i in Iterator(10, 3):
+#     print(i)
