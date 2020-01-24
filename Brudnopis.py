@@ -96,7 +96,10 @@ class Iterator:
     def __next__(self):
         if self.n == len(self.list):
             raise StopIteration
-        
+        for i in range(self.n * self.m):
+            if i % self.m != 0:
+                self.lista.append(i)
 
-for i in Iterator(10):
+
+for i in Iterator(10, 3):
     print(i)
