@@ -18,6 +18,7 @@ def get_n_primes(n):
     return primes
 
 lst = get_n_primes(5000)
+for i in lst:
     print(i)
     print(lst)  # sprawdż czym jest lst
 
