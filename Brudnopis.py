@@ -143,3 +143,32 @@ for i in Iterator(10, 3):
 
 for i in Iterator(10, 3).__next__():
     print(i)
+    
+class Iterator:
+    def __init__(self, n, m):
+        self.n = n
+        self.m = m
+        self.o = 0
+        self.list = []
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.n == len(self.list):
+            raise StopIteration
+        else:
+            # if o % self.m != 0:
+            #     self.list.append(o)
+            #     o += 1
+            #     return self.list, o
+
+            self.list.append(self.o)
+            self.o += 1
+            return self.list
+
+
+
+test = Iterator(10, 3)
+for i in test:
+    print(i)
