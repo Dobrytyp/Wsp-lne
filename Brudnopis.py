@@ -90,3 +90,28 @@ class Dzialania:
             return "Nie można dzielić przez zero"
 
 print(Dzialania.dzielenie(10, 5))
+
+
+class Dzialania:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
+    def dodawanie(self):
+        return self.a + self.b
+
+    def odejmowanie(self):
+        return self.a - self.b
+
+    def mnozenie(self):
+        return self.a * self.b
+
+    def dzielenie(self):
+        try:
+            return self.a / self.b
+        except ZeroDivisionError:
+            return "Nie można dzielić przez zero"
+
+test = Dzialania(10, 5)
+
+print(test.dzielenie())
